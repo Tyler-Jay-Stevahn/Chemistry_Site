@@ -3,16 +3,38 @@ import decimal
 
 
 # values given
-a = 1548.8552574
-b = 5576.24895464
-
+a = '048.800'
+b = '576'
+d = '210'
+c = ['100', '1.1', '0.0000000000008', '4.000008', '45', '808', '158.575', '9.008', '0.0005', '4.3005', '350.0']
 # print values and length
-print(a, len(str(a))-1, )
-print(b, len(str(b))-1)
+#print(a, len(str(a))-1)
+#print(b, len(str(b))-1)
 
-def determine_sig_fig(a, b):
-    print(a)
-    print(b)
+def determine_sig_fig(a):
+    #print(len(a) - 1)
+    #print(a_sig_fig, b_sig_fig)
+    if '.' in a:
+        c = str(a)
+        #print(c)
+        c = str(c).lstrip("0")
+        c = str(c).lstrip(".")
+        c = str(c).lstrip("0")
+        c = str(c).replace(".", "")
+        len_c = len(c)  
+        total_spaces = len_c
+        print(a, "has", total_spaces, "significant digits")
+        return total_spaces
+    else:
+        if a[-1:] == "0":
+            print(a, "has an unknown number of significant digits")
+            total_spaces = 50
+            return total_spaces
+        else:
+            total_spaces = len(a)
+            print(a, "has", total_spaces, "significant digits")
+            return total_spaces
+
 
         
 def value_to_decimal(value, decimal_places):
@@ -25,8 +47,8 @@ def multiply_sig_fig(a, b):
     a_dec = decimal.Decimal(str(a))
     b_dec = decimal.Decimal(str(b))
     # make them into decimals
-    a_places = abs(a_dec.as_tuple().exponent)
-    b_places = abs(b_dec.as_tuple().exponent)
+    a_places = determine_sig_fig(a)
+    b_places = determine_sig_fig(b)
     print(a_places)
     print(b_places)
     if a_places < b_places:
@@ -85,6 +107,8 @@ def sub_sig_fig(a, b):
     print(c)
     print(e, total_spaces)
 
-#multiply_sig_fig(a, b)
+multiply_sig_fig(a, b)
 #add_sig_fig(a, b)
 #sub_sig_fig(a, b)
+'''for i in c:
+    determine_sig_fig(i)'''
