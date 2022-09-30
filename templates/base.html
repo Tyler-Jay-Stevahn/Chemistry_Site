@@ -3,14 +3,18 @@
 
 <!DOCTYPE html>
 <html lang='en'>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <style>
+       
+    </style>
 <head> 
     <meta charset='UTF-8'>
         <title>{% block title %} {% endblock %} </title>
         <link rel="stylesheet" type="text/css", href="{% static 'boostrap/css/bootstrap.min.css' %}"/>
 
-        <link rel="stylesheet" type="text/css", href="{% static 'css/style.css' %}"/>
+        <link rel="stylesheet" type="text/css", href="../static/css/style.css"/>
 
-        {% include 'navbar.html' %}
+        {% include 'navbar.html' %} 
 </head>
 <body>
 {% block content %} {% endblock %}

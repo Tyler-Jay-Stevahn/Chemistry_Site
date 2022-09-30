@@ -1,14 +1,23 @@
+<style>
+.LP1, .LP2, .LP3{
+    position: relative;
+    text-align: center;
+    }
+.LP1{
+    font-size: 40px;
+}
+</style>
 {% extends 'base.html' %}
-
+<link rel="stylesheet" href="../static/css/style.css" />
 {% block title %}
 this is a title
 {% endblock %}
 
 {% block content %}
 
-<h1>This is our landing page</h1>
+<h1 class="LP1">Landing Page</h1>
 
-<p>Welcome to our landing page</p>
-<h3> my greeting is {{greeting}}</h3>
+<p class="LP2">Welcome to here...</p>
+<h3 class="LP3"> my greeting is {{greeting}}</h3>
 
 {% endblock %}

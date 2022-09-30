@@ -35,11 +35,8 @@ def datepage(request, year):
 
 
 def second_page(request):
-    obj = employees.objects.get(id=1)
-    context={
-        "data":obj
-    }
-    return render(request, 'second_page.html', context)
+    
+    return render(request, 'second_page.html')
 
 
 def contact(request):
