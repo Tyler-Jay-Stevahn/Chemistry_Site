@@ -56,12 +56,13 @@ def multiply_sig_fig(a, b):
     else:
         total_spaces = b_places
     print("need" , total_spaces, "significant digits")
-    d = a * b
-    
+    d = float(a) * float(b)
+    print(d)
     len_a = len(str(d)) - 1
+    print(len_a)
     #print(len_a, len(str(d)))
 
-    d = d/(10**len_a)
+    
     #print(d, total_spaces)
     #e = value_to_decimal(d, total_spaces)
     e = round(d, total_spaces)

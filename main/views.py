@@ -3,8 +3,12 @@
 #from .forms import registration_forms
 #from .functions import to_dataframe
 
+# link to old repository https://github.com/Tyler-Jay-Stevahn/PostOPDATA
+
 from django.shortcuts import render
 from django.http import HttpResponse
+
+from main.functions import *
 
 # Create your views here.
 def index(request):
@@ -15,6 +19,7 @@ def landingpage(request):
         "greeting":"heylo"
     }
     return render(request, 'landingpage.html', context)
+
 
 
 def home(request):
